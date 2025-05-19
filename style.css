@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+    background: rgb(235, 202, 245);
+}
+html::-webkit-scrollbar-thumb {
+    background: rgb(10, 5, 138);
+}
+body {
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background: #e6eff1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+  .loader-container.fade-out {
+    top: -120%;
+}
+
+/*header*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    height: 7rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 2px;
+}
+
+/*home kiri*/
+section {
+  min-height: 100vh;
+  padding: 2rem 10%;
+}
+.heading {
+  font-size: 3.5rem;
+  color: rgb(32, 32, 32);
+  font-weight: 800;
+  text-align: center;
+}
+.heading span {
+  color: rgb(115, 3, 167);
+}
+header .logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #080e37;
+}
+header .logo i {
+  font-size: 2rem;
+}
+header .logo:hover {
+  color: #10067f;
+}
+/*home kiri akhir*/
+/*navbar kanan*/
+header .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .navbar li {
+    margin-left: 2.5rem;
+}
+header .navbar ul li a {
+    font-size: 1.5rem;
+    color: #2e2a44;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+    transition: 0.3s;
+}
+header .navbar ul li a.active, 
+header .navbar ul li a:hover {
+    color: #011aff;
+    border-bottom: 0.3rem solid #011aff;
+    padding: 0.5rem 0;
+}
+/*end nav*/
+/*hamburg*/
+#menu {
+    font-size: 3rem;
+    cursor: pointer;
+    color: #030f74;
+    display: none;
+}
+@media (max-width: 750px) {
+    #menu {
+        display: block;
+    }
+    header .navbar {
+    position: fixed;
+    top: 6.5rem;
+    right: -120%;
+    width: 75%;
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    background-color: #130c39;
+    }
+    header .navbar ul {
+    flex-flow: column;
+    padding: 1rem;
+    }
+    header .navbar ul li {
+        text-align: center;
+        width: 100%;
+        margin: 1rem 0;
+        border-radius: 0.5rem;
+        width: 25rem;
+    }
+    header .navbar ul li a {
+        display: block;
+        padding: 1rem;
+        text-align: left;
+        color: #FFF;
+        font-size: 2rem;
+    }
+    header .navbar ul li a.active, 
+    header .navbar ul li a:hover {
+        padding: 1rem;
+        color: #FFF;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #011aff;
+    }
+    .fa-times {
+        transform: rotate(180deg);
+    }
+    header .navbar.nav-toggle {
+        right: 0;
+    }
+}
+
+
+
+
+/*head*/
+section {
+    min-height: 100vh;
+    padding: 2rem 9%;
+}
+.heading {
+    font-size: 3.5rem;
+    color: rgb(32, 32, 32);
+    font-weight: 800;
+    text-align: center;
+}
+.heading span {
+    color: rgb(115, 3, 167);
+}
+
+/*home*/
+.home {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+}
+.home::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.home .content {
+    flex: 1 1 40rem;
+    padding-top: 7rem;
+    z-index: 1;
+}
+.home .image {
+    flex: 1 1 40rem;
+    z-index: 1;
+}
+.home .image img {
+    width: 70%;
+    margin-left: 6rem;
+    border-radius: 60%;
+    box-shadow: 1px 5px 10px rgb(33, 35, 46);
+    cursor: pointer;
+    transition-property: box-shadow;
+    transition-delay: 0.1s;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+.home .image img:hover {
+    box-shadow: 0 5px 20px rgb(55, 29, 246);
+}
+.home .content h2 {
+    font-size: 5rem;
+    font-weight: 600;
+    color: rgb(10, 5, 138);
+}
+.home .content h2 span {
+    font-size: 5rem;
+}
+.home .content p {
+    font-size: 2.5rem;
+    color: #241f3f;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+.home .content p span {
+    font-size: 2.5rem;
+    color: #eabd17;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+.home .btn {
+    margin-top: 1rem;
+    position: absolute;
+    line-height: 0;
+    padding: 1.5rem 3rem;
+    border-radius: 5em;
+    transition: 0.5s;
+    color: #FFF;
+    background: #240bc7;
+    box-shadow: 0px 15px 18px;
+    font-family: "Nunito", sans-serif;
+}
+.home .btn span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+.home .btn i {
+    margin-left: 0.3rem;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+.home .btn:hover {
+  background: #1a047e;
+}
+.home .btn:hover i {
+  transform: translateX(5px);
+}
+
+
+.socials {
+    position: relative;
+    margin-top: 10rem;
+}
+.socials .socials-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.socials .socials-icons li {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.socials .socials-icons a {
+    font-size: 2rem;
+    display: inline-block;
+    line-height: 45px;
+    color: #00ffff;
+    background-color: #0e0018;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    transition-property: all;
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.socials .socials-icons a:active,
+.socials .socials-icons a:focus,
+.socials .socials-icons a:hover {
+    color: #FFF;
+    background-color: #240bc7;
+}
+.socials .socials-icons a.linkedin:hover {
+    background-color: rgb(10, 4, 199);
+}
+.socials .socials-icons a.github:hover {
+    background-color: rgb(0, 27, 27) ;
+}
+.socials .socials-icons a.instagram:hover {
+    background-color: rgb(249, 7, 184);
+}
+
+
+.about {
+    background-color: #e7f7fe;
+}
+.about .heading {
+    color: #000000;
+    transition-property: color;
+    transition-delay: 0.1s;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in;
+}
+.about .heading:hover {
+    color: #ea1717;
+} 
+.about .heading span {
+    color: #3105e2;
+    transition-property: color;
+    transition-delay: 0.1s;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in;
+}
+.about .heading span:hover {
+    color: #29ea17;
+}
+.about .row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 5rem;
+}
+.about .row .image {
+    text-align: center;
+    flex: 1 1 30rem;
+}
+.about .row .image img {
+    margin: 5rem;
+    width: 30rem;
+    border-radius: 7%;
+    box-shadow: 1px 5px 15px #3a3838;
+    transition: 0.3s;
+    cursor: pointer;
+    transition-property: box-shadow;
+    transition-delay: 0.1s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+}
+.about .row .image img:hover {
+     box-shadow: 1px 5px 20px #0000ff;
+}
+.about .row .content {
+    flex: 1 1 30rem;
+    padding: 5rem;
+}
+.about .row .content h3 {
+    color: #090d21;
+    font-size: 2.45rem;
+    cursor: pointer;
+    margin-top: 1.6rem;
+    transition-property: color;
+    transition-delay: 0.1s;
+    transition-duration: 0.26s;
+    transition-timing-function: ease-in;
+}
+.about .row .content h3:hover {
+    color: #ea1745;
+}
+.about .row .content .name {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #020203;
+}
+.about .row .content p {
+    font-size: 1.5rem;
+    margin-top: 1.7rem;
+    font-family: "Nunito";
+    font-weight: 600;
+    text-align: justify;
+}
+.about .row .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.15mm;
+}
+.about .row .box-container .box p {
+    font-family: "Roboto";
+}
+.about .row .box-container .box p span {
+  color: #0415cf;
+}
+
+@media screen and (max-width: 600px) {
+    .about .row {
+        padding: 0.5rem;
+        margin-bottom: 7rem;
+    }
+    .about .row .image {
+        margin-top: 2rem;
+    }
+    .about .row .image img {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .about .row .content {
+        padding: 1rem;
+    }
+    .about .row .content .box-container {
+        gap: 0;
+    }
+}
+
+
+
+
