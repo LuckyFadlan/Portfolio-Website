@@ -28,7 +28,7 @@ html::-webkit-scrollbar-thumb {
     background: rgb(10, 5, 138);
 }
 body {
-    background-color: beige;
+    background-color: #fbf7eb;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -451,6 +451,12 @@ section {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: 0.2s;
+}
+.skills h2:hover {
+   color: #16eded;
 }
 .skills h2 i {
   font-size: 3.5rem;
@@ -458,6 +464,11 @@ section {
 .skills h2 span {
     color: #ffd001;
     font-size: 3.5rem;
+    transition-property: color;
+    transition-duration: 0.2s;
+}
+.skills h2 span:hover {
+   color: #36ed16;
 }
 .skills .container {
   background: rgba(0, 0, 22, 0.4);
@@ -473,6 +484,7 @@ section {
   grid-template-columns: repeat(5, minmax(140px, 1fr));
   gap: 1.8rem;
   padding: 1rem;
+  cursor: help;
 }
 .skill-card {
   background: rgba(0, 0, 22, 0.9);
@@ -481,10 +493,10 @@ section {
   padding: 1.5rem 1rem;
   text-align: center;
   transition: 0.3s;
-  cursor: default;
+  cursor: pointer;
 }
 .skill-card:hover {
-  box-shadow: 0 8px 10px rgba(0, 2, 68, 0.8);
+  box-shadow: 0 8px 10px rgba(4, 141, 210, 0.8);
   background-color: rgba(0, 0, 0, 0.9);
 }
 .skill-card img {
@@ -508,8 +520,8 @@ section {
     }
     .skills .container .skills-grid {
         margin: 1rem;
-        grid-template-columns: repeat(2, 1fr);
-        margin: 2rem 0.2rem 2rem 0.2rem;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 2rem 0.2rem 2rem 0.2rem; 
         gap: 1rem;
     }
     .skills .container {
@@ -517,3 +529,96 @@ section {
         width: 100%;
     }
 }   
+
+.education {
+    background-color: #ffffe5;
+    min-height: 80vh;
+}
+.education .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.education .box-container .box {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    border-radius: 3rem;
+    box-shadow: 0.2rem 0.5rem 1rem;
+    text-align: center;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background-color: #fffffa;
+    transition: 0.05s;
+    transition-property: box-shadow;
+    transition-delay: 0.05s;
+}
+.education .box-container .box:hover {
+    transform: scale(1.005);
+    box-shadow: 2px 8px 10px rgb(30, 145, 245);
+}
+.education .box-container .box .image {
+    flex: 1 1 20rem;
+    width: 100%;
+}
+.education .box-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+.education .box-container .box .school {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 70rem;
+    flex-direction: column;
+    padding: 1rem;
+}
+.education .box-container .box .school h3 {
+    font-size: 2.5rem;
+    color: #030f74;
+    padding: 0.5rem 0;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 1rem;
+}
+.education .box-container .box .school p {
+    font-size: 1.7rem;
+    margin-left: 1.05rem;
+    text-align: left;
+}
+.education .box-container .box .school h4 {
+    font-size: 2rem;
+    color: #860202;
+    text-align: left;
+    margin: 1rem;
+    font-family: "Roboto";
+    font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+    .education .box-container .box {
+        flex-direction: column;
+        width: 100%;
+    }
+    .education .box-container .box .image {
+        width: 100%;
+        height: 25rem;
+    }
+    .education .box-container .box img {
+        width: 100%;
+    }
+    .education .box-container .box .school {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        flex-wrap: wrap;
+        flex: 0;
+    }
+}                       
